@@ -1,6 +1,4 @@
 # Import and initialize the pygame library
-from cgitb import grey
-from string import whitespace
 import pygame as py
 from random import randrange
 
