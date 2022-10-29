@@ -1,6 +1,4 @@
 # Import and initialize the pygame library
-from cgitb import grey
-from string import whitespace
 import pygame as py
 from random import randrange
 
@@ -116,18 +114,16 @@ while True:
 
     
     for i in range(0, len(snake_List)): # Mirroring snake
-        if snake_head[0] > FieldW:
+        if snake_head[0] >= FieldW:
             snake_head[0] = 0
-            print('b')
         elif snake_head[0] < 0:
-            snake_head[0] = FieldW
-            print('a')
-        elif snake_head[1] > FieldH:
+            snake_head[0] = FieldW - 1
+        elif snake_head[1] >= FieldH:
             snake_head[1] = 0
-            print('c')
         elif snake_head[1] < 0:
-            snake_head[1] = FieldH
-            print('d')
+            snake_head[1] = FieldH - 1
+    print(snake_head)
+    print(snake_List)
                
     for i in range(0, len(snake_List)): # GameOver cycle
         if snake_List[-1][0] == snake_List[i][0] and snake_List[-1][1] == snake_List[i][1] and i != len(snake_List) - 1:
